@@ -59,6 +59,22 @@ def draw(canvas):
     # draw ball
     canvas.draw_circle(ball_pos, BALL_RADIUS, 2, "Red", "White")
 
+    # determine whether ball and gutter 'collide'
+    if ball_pos[0] <= BALL_RADIUS + PAD_WIDTH:
+        # determine whether paddle and ball collide    
+        if ball_pos[1] >= paddle1_pos[0] and ball_pos[1] <= paddle1_pos[1]:
+            ball_vel[0] = - 1.1 * ball_vel[0]
+        else:
+            score2 += 1
+            spawn_ball("RIGHT")
+    elif ball_pos[0] >= WIDTH - 1 - BALL_RADIUS - PAD_WIDTH:
+        # determine whether paddle and ball collide    
+        if ball_pos[1] >= paddle2_pos[0] and ball_pos[1] <= paddle2_pos[1]:
+            ball_vel[0] = - 1.1 * ball_vel[0]
+        else:
+            score1 += 1
+            spawn_ball("LEFT")
+
     # update paddle's vertical position, keep paddle on the screen
     if paddle2_pos[0] + paddle2_vel >= 0 and paddle2_pos[1] + paddle2_vel <= HEIGHT:
         paddle2_pos[0] += paddle2_vel
