@@ -59,3 +59,19 @@ def draw(canvas):
     # draw ball
     canvas.draw_circle(ball_pos, BALL_RADIUS, 2, "Red", "White")
 
+    # update paddle's vertical position, keep paddle on the screen
+    if paddle2_pos[0] + paddle2_vel >= 0 and paddle2_pos[1] + paddle2_vel <= HEIGHT:
+        paddle2_pos[0] += paddle2_vel
+        paddle2_pos[1] += paddle2_vel
+    if paddle1_pos[0] + paddle1_vel >=0 and paddle1_pos[1] + paddle1_vel <= HEIGHT:
+        paddle1_pos[0] += paddle1_vel
+        paddle1_pos[1] += paddle1_vel
+   
+    # draw paddles
+    canvas.draw_line((0, paddle1_pos[0]), (0, paddle1_pos[1]), 2*PAD_WIDTH, "White")
+    canvas.draw_line((WIDTH, paddle2_pos[0]), (WIDTH, paddle2_pos[1]), 2*PAD_WIDTH, "White")
+
+    # draw scores
+    canvas.draw_text(str(score1), (200,100), 50, "White")
+    canvas.draw_text(str(score2), (400,100), 50, "White")
+
