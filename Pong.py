@@ -94,7 +94,7 @@ def draw(canvas):
 def keydown(key):
     global paddle1_vel, paddle2_vel
     if key == simplegui.KEY_MAP["down"]:
-        paddle1_vel = 3
+        paddle2_vel = 3
     elif key == simplegui.KEY_MAP["up"]:
         paddle2_vel = -3
     elif key == simplegui.KEY_MAP["w"]:
@@ -105,7 +105,7 @@ def keydown(key):
 def keyup(key):
     global paddle1_vel, paddle2_vel
     if key == simplegui.KEY_MAP["down"]:
-        paddle1_vel = 0
+        paddle2_vel = 0
     elif key == simplegui.KEY_MAP["up"]:
         paddle2_vel = 0
     elif key == simplegui.KEY_MAP["w"]:
