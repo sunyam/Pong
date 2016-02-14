@@ -91,3 +91,25 @@ def draw(canvas):
     canvas.draw_text(str(score1), (200,100), 50, "White")
     canvas.draw_text(str(score2), (400,100), 50, "White")
 
+def keydown(key):
+    global paddle1_vel, paddle2_vel
+    if key == simplegui.KEY_MAP["down"]:
+        paddle1_vel = 3
+    elif key == simplegui.KEY_MAP["up"]:
+        paddle2_vel = -3
+    elif key == simplegui.KEY_MAP["w"]:
+        paddle1_vel = -3
+    elif key == simplegui.KEY_MAP["s"]:
+        paddle1_vel	= 3
+    
+def keyup(key):
+    global paddle1_vel, paddle2_vel
+    if key == simplegui.KEY_MAP["down"]:
+        paddle1_vel = 0
+    elif key == simplegui.KEY_MAP["up"]:
+        paddle2_vel = 0
+    elif key == simplegui.KEY_MAP["w"]:
+        paddle1_vel = 0
+    elif key == simplegui.KEY_MAP["s"]:
+        paddle1_vel	= 0
+
