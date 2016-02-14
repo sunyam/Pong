@@ -1,2 +1,2 @@
-This is the multi-player classic Pong game. One player moves using arrow keys; and the other using 'W' 'S'.
+This is the multi-player classic Pong game. One player moves using arrow keys; and the other using 'W' 'S'. Your job is to stop the ball from going in your gutter and try to put it in the other player's; ball keeps accelerating with every collision with pads. So, difficulty in controlling the ball increases!
 Implemented in Python. Compatible with http://www.codeskulptor.org/ ; Otherwise, you'd need simpleguitk module which is a substitute for simplegui module available in codeskulptor.
